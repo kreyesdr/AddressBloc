@@ -1,5 +1,10 @@
-def hello
-  ARGV.each do |arg|
-  "Hey #{arg}"
-    end
+
+def greeting
+ARGV.each do |greet|
+  "#{greet}"
 end
+end
+
+
+
+greeting
