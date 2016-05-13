@@ -1,10 +1,12 @@
-
 def greeting
-ARGV.each do |greet|
-  "#{greet}"
+  greet = ARGV.delete_at(0)
+  ARGV.each do |ppl|
+    puts "#{greet} #{ppl}"
+  end
 end
-end
-
-
 
 greeting
+
+
+
+
