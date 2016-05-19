@@ -1,7 +1,7 @@
 require '../models/address_book'
 
 RSpec.describe AddressBook do
-  context "attributes" do
+  describe "attributes" do
     it "respond to entries" do
       book = AddressBook.new
       expect(book).to respond_to(:entries)
@@ -25,7 +25,7 @@ RSpec.describe AddressBook do
 
       book.remove_entry(name, phone_number, email_address)
       expect(book.entries.size).to eq 1
-      expect(book.entries.first.name).to eq('Kenny Reyes')
+      expect(book.entries.name).to eq('Kenny Reyes')
     end
   end
 
