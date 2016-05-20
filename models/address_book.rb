@@ -1,4 +1,4 @@
-require_relative 'entry' #<-- We use require_relative becase file are in the same path?
+require_relative 'entry' #<-- We use require_relative because file are in the same path?
 
 class AddressBook
   attr_reader :entries
