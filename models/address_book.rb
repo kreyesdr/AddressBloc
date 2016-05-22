@@ -1,4 +1,5 @@
-require_relative 'entry' #<-- We use require_relative because file are in the same path?
+require 'csv'
+require_relative 'entry'
 
 class AddressBook
   attr_reader :entries
@@ -26,6 +27,15 @@ class AddressBook
       end
     end
     @entries.delete(delete_entry)
+  end
+
+  def import_from_csv(file_name)
+    csv_text = File.read(file_name)
+    csv = CSV.parse(csv_text, headers: true, skip_blanks: true)
+    csv.each do |r|
+      row_hash = r.to_hash
+      add_entry(row_hash['name'], row_hash['phone_number'], row_hash['email'])
+    end
   end
 end
 
