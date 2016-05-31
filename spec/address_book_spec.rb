@@ -232,4 +232,11 @@ RSpec.describe AddressBook do
       expect(entry).to be_nil
     end
   end
+  describe '#detonate' do
+    it 'delete all existing entries' do
+      book.import_from_csv('entries.csv')
+      entry = book.detonate
+      expect(entry).to eq []
+    end
+  end
 end

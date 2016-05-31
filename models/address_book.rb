@@ -64,6 +64,10 @@ class AddressBook
     end
     return nil
   end
+
+  def detonate
+    entries.clear
+  end
 end
 
 
